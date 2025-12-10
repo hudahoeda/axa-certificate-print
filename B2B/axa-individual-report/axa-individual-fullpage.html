@@ -1,0 +1,1587 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>AXA Individual Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style type="text/css">
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Base font families */
+      .font-redhat {
+        font-family: "Red Hat Display", sans-serif;
+      }
+
+      .font-opensans {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      /* Text colors */
+      .text-dark-blue {
+        color: #212958;
+      }
+
+      .text-white {
+        color: #ffffff;
+      }
+      
+      .text-gray{
+        color: #a6a6a6 ;
+      }
+
+      .text-black {
+        color: #000000;
+      }
+
+      /* Font sizes */
+      .text-xxl {
+        font-size: 71px;
+      }
+
+      .text-xl {
+        font-size: 45px;
+      }
+
+      .text-lg {
+        font-size: 21px;
+      }
+
+      .text-md {
+        font-size: 20px;
+      }
+
+      .text-base {
+        font-size: 18px;
+      }
+
+      .text-sm {
+        font-size: 16px;
+      }
+
+      .text-xs {
+        font-size: 15px;
+      }
+
+      .text-tiny {
+        font-size: 14px;
+      }
+
+      .text-micro {
+        font-size: 12px;
+      }
+
+      /* Font weights */
+      .font-black {
+        font-weight: 900;
+      }
+
+      .font-bold {
+        font-weight: 700;
+      }
+
+      .font-medium {
+        font-weight: 500;
+      }
+
+      .font-normal {
+        font-weight: 400;
+      }
+
+      .font-italic {
+        font-style: italic;
+      }
+
+      /* Line heights for multi-line text */
+      .leading-tight {
+        line-height: 18px;
+      }
+
+      .leading-normal {
+        line-height: 20px;
+      }
+
+      .leading-relaxed {
+        line-height: 22px;
+      }
+
+      /* Page Layout */
+      .page {
+        position: relative;
+        width: 893px;
+        height: 1263px;
+        margin: 0 auto;
+        background: white;
+        overflow: hidden;
+      }
+
+      .page-background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Print styles */
+      @page {
+        size: 893px 1263px;
+        margin: 0;
+        padding: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          width: 893px;
+        }
+
+        .page {
+          page-break-after: always;
+          page-break-inside: avoid;
+          margin: 0;
+        }
+
+        .page:last-child {
+          page-break-after: auto;
+        }
+      }
+
+      /* Screen styles */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #a0a0a0;
+      }
+
+      @media screen {
+        .page {
+          margin: 20px auto;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Page 1 -->
+    <div class="page">
+      <img
+        width="893"
+        height="1263"
+        src="https://res.cloudinary.com/dx3b3otna/image/upload/v1765167386/Copy_of_27_Nov_-_IND_Laporan_Indivdu_Tech_Data_and_AI_TDAI_Academy001_vsdcq1.png"
+        alt="background image"
+        class="page-background"
+      />
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 59px;
+          width: 775px;
+          height: 120px;
+        ">
+      <p
+        class="font-opensans font-bold text-xl text-white">
+        Laporan Individu
+      </p>
+      <p
+        class="font-opensans font-bold text-sm text-white">
+        Tech, Data, and AI (TDAI) Academy 
+      </div>
+      <p
+        style="position: absolute; top: 194px; left: 59px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Nama
+      </p>
+      <p
+        style="position: absolute; top: 194px; left: 250px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['Nama']}}
+      </p>
+      <p
+        style="position: absolute; top: 247px; left: 59px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Departemen
+      </p>
+      <p
+        style="position: absolute; top: 247px; left: 250px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['Departemen']}}
+      </p>
+      <p
+        style="position: absolute; top: 295px; left: 59px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Batch
+      </p>
+      <p
+        style="position: absolute; top: 295px; left: 250px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['Batch']}}
+      </p>
+      <p
+        style="position: absolute; top: 359px; left: 58px; white-space: nowrap"
+        class="font-opensans text-lg text-white font-bold"
+      >
+        Gambaran Besar Program
+      </p>
+      <p
+        style="position: absolute; top: 400px; left: 50px; white-space: nowrap"
+        class="font-opensans text-sm text-black leading-relaxed"
+      >
+        Program Tech, Data, and AI (TDAI) Academy membangun kesiapan digital dan
+        AI melalui pembelajaran<br />terstruktur di tiga pilar utama: Teknologi,
+        Data, dan AI. Peserta mengikuti modul mandiri (self-paced learning),<br/>
+        in-house class, dan latihan praktis untuk memperkuat kompetensi
+        fundamental.
+      </p>
+      <p
+        style="position: absolute; top: 490px; left: 50px; white-space: nowrap"
+        class="font-opensans text-sm text-black"
+      >
+        Laporan ini menyajikan hasil peserta pada dua komponen utama:
+      </p>
+      <p
+        style="position: absolute; top: 512px; left: 78px; white-space: nowrap"
+        class="font-opensans text-sm text-black"
+      >
+        Pengetahuan Dasar atau Foundational Knowledge, dinilai melalui serangkaian quiz dan test
+      </p>
+      <p
+        style="position: absolute; top: 535px; left: 78px; white-space: nowrap"
+        class="font-opensans text-sm text-black"
+      >
+        Pengetahuan Aplikatif atau Application Knowledge, dinilai melalui Individual Task Assignment
+      </p>
+      <p
+        style="position: absolute; top: 535px; left: 285px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-italic"
+      >
+      <p
+        style="position: absolute; top: 597px; left: 58px; white-space: nowrap"
+        class="font-opensans text-md text-white font-bold"
+      >
+        Performa Pengetahuan Dasar (Foundational Knowledge)
+      </p>
+      <p
+        style="position: absolute; top: 666px; left: 218px; white-space: nowrap"
+        class="font-opensans text-md text-white font-bold"
+      >
+        Components
+      </p>
+      <p
+        style="position: absolute; top: 666px; left: 645px; white-space: nowrap"
+        class="font-opensans text-md text-white font-bold"
+      >
+        Score
+      </p>
+      <p
+        style="position: absolute; top: 728px; left: 69px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        Pre-Lecture Quiz
+      </p>
+      <p
+        style="position: absolute; top: 728px; left: 650px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        {{$json['[Score] Pre-Lecture Quiz']}}
+      </p>
+      <p
+        style="position: absolute; top: 791px; left: 69px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        Pre Test
+      </p>
+      <p
+        style="position: absolute; top: 791px; left: 650px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        {{$json['[Score] Pre-test']}}
+      </p>
+      <p
+        style="position: absolute; top: 854px; left: 69px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        Tech Quiz
+      </p>
+      <p
+        style="position: absolute; top: 854px; left: 650px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        {{$json['[Score] Tech Quiz']}}
+      </p>
+      <p
+        style="position: absolute; top: 916px; left: 69px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        Data Quiz
+      </p>
+      <p
+        style="position: absolute; top: 916px; left: 650px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        {{$json['[Score] Data Quiz']}}
+      </p>
+      <p
+        style="position: absolute; top: 978px; left: 69px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        AI Essentials Quiz
+      </p>
+      <p
+        style="position: absolute; top: 978px; left: 650px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        {{$json['[Score] AI Essential']}}
+      </p>
+      <p
+        style="position: absolute; top: 1041px; left: 69px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        AI for Business Use Case Quiz
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 1041px;
+          left: 650px;
+          white-space: nowrap;
+        "
+        class="font-opensans text-base text-black"
+      >
+        {{$json['[Score] AI Business Case']}}
+      </p>
+      <p
+        style="position: absolute; top: 1103px; left: 69px; white-space: nowrap"
+        class="font-opensans text-base text-black"
+      >
+        Post Test
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 1103px;
+          left: 650px;
+          white-space: nowrap;
+        "
+        class="font-opensans text-base text-black"
+      >
+        {{$json['[Score] Post-Test']}}
+      </p>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+      <img
+        width="893"
+        height="1263"
+        src="https://res.cloudinary.com/dx3b3otna/image/upload/v1765167386/Copy_of_27_Nov_-_IND_Laporan_Indivdu_Tech_Data_and_AI_TDAI_Academy002_uct3mh.png"
+        alt="background image"
+        class="page-background"
+      />
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 59px;
+          width: 775px;
+          height: 120px;
+        ">
+      <p
+        class="font-opensans font-bold text-xl text-white">
+        Laporan Individu
+      </p>
+      <p
+        class="font-opensans font-bold text-sm text-white">
+        Tech, Data, and AI (TDAI) Academy 
+      </div>
+      <!-- Spider chart for foundational knowledge -->
+      <div
+        style="
+          position: absolute;
+          top: 140px;
+          left: 120px;
+          width: 650px;
+          height: 380px;
+        "
+      >
+        <canvas id="foundationalSpiderChart"></canvas>
+      </div>
+      <p
+        style="position: absolute; top: 567px; left: 95px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Pillar
+      </p>
+      <p
+        style="position: absolute; top: 567px; left: 250px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Catatan Kompetensi
+      </p>
+      <p
+        style="position: absolute; top: 567px; left: 578px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Langkah Selanjutnya
+      </p>
+      <p
+        style="position: absolute; top: 677px; left: 81px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold"
+      >
+        Tech Pillar
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 610px;
+          left: 190px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Kompetensi] Tech Quiz']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 610px;
+          left: 500px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] Tech Quiz']}}
+        </p>
+      </div>
+      <p
+        style="position: absolute; top: 834px; left: 81px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold"
+      >
+        Data Pillar
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 777px;
+          left: 190px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Kompetensi] Data Quiz']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 777px;
+          left: 500px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] Data Quiz']}}
+        </p>
+      </div>
+      <p
+        style="position: absolute; top: 980px; left: 72px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold"
+      >
+        AI Essentials
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 925px;
+          left: 190px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Kompetensi] AI Essential']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 925px;
+          left: 500px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] AI Essential']}}
+        </p>
+      </div>
+      <p
+        style="
+          position: absolute;
+          top: 1100px;
+          left: 60px;
+          width: 120px;
+          overflow-wrap: break-word;
+          text-align: center;
+        "
+        class="font-opensans text-xs text-black font-bold"
+      >
+        AI for Business Use Case
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 1065px;
+          left: 190px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Kompetensi] AI Business Case']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 1065px;
+          left: 500px;
+          width: 290px;
+          height: 160px;
+        "
+      >
+        <p
+          class="font-opensans text-xs text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] AI Business Case']}}
+        </p>
+      </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page">
+      <img
+        width="893"
+        height="1263"
+        src="https://res.cloudinary.com/dx3b3otna/image/upload/v1765167386/Copy_of_27_Nov_-_IND_Laporan_Indivdu_Tech_Data_and_AI_TDAI_Academy003_pax1dh.png"
+        alt="background image"
+        class="page-background"
+      />
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 59px;
+          width: 775px;
+          height: 120px;
+        ">
+      <p
+        class="font-opensans font-bold text-xl text-white">
+        Laporan Individu
+      </p>
+      <p
+        class="font-opensans font-bold text-sm text-white">
+        Tech, Data, and AI (TDAI) Academy 
+      </div>
+      <p
+        style="position: absolute; top: 206px; left: 54px; white-space: nowrap"
+        class="font-opensans text-lg text-white font-bold"
+      >
+        Performa Pengetahuan Aplikatif (
+      </p>
+      <p
+        style="position: absolute; top: 206px; left: 406px; white-space: nowrap"
+        class="font-opensans text-lg text-white font-bold font-italic"
+      >
+        Application Knowledge)
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 266px;
+          left: 50px;
+          width: 210px;
+          white-space: nowrap;
+        "
+        class="font-opensans text-sm text-black leading-relaxed"
+      >
+        Bagian ini menjelaskan performa peserta dalam menerapkan pengetahuan
+        dasar ke sebuah<br />permasalahan bisnis nyata. Penilaian ini diambil
+        dari hasil <a class="font-opensans text-sm text-black font-bold">Individual Task Assignment</a>
+      </p>
+      </p>
+      <p
+        style="position: absolute; top: 362px; left: 99px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Kompetensi
+      </p>
+      <p
+        style="position: absolute; top: 362px; left: 289px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Bobot
+      </p>
+      <p
+        style="position: absolute; top: 362px; left: 494px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Deskripsi
+      </p>
+      <p
+        style="position: absolute; top: 362px; left: 743px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Skor
+      </p>
+      <p
+        style="position: absolute; top: 456px; left: 65px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold leading-normal"
+      >
+        Business Problem<br />Definition
+      </p>
+      <p
+        style="position: absolute; top: 466px; left: 299px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        20%
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 426px;
+          left: 396px;
+          width: 280px;
+          white-space: normal;
+          text-align: left;
+        "
+        class="font-opensans text-tiny text-black leading-normal"
+      >
+        Mengukur kemampuan peserta dalam mengidentifikasi secara jelas
+        proses atau alur kerja AXA Mandiri yang relevan dan dapat
+        ditingkatkan melalui otomasi atau AI.
+      </p>
+      <p
+        style="position: absolute; top: 456px; left: 743px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Score] Business Problem Definition']}}
+      </p>
+      <p
+        style="position: absolute; top: 591px; left: 65px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold leading-normal"
+      >
+        AI Application<br />Understanding
+      </p>
+      <p
+        style="position: absolute; top: 600px; left: 299px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        30%
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 560px;
+          left: 396px;
+          width: 280px;
+          white-space: normal;
+          text-align: left;
+        "
+        class="font-opensans text-tiny text-black leading-normal"
+      >
+        Menilai pemahaman peserta tentang bagaimana Large Language Models
+        dapat mendukung atau mengotomatiskan tugas yang telah
+        diidentifikasi.
+      </p>
+      <p
+        style="position: absolute; top: 591px; left: 743px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Score] AI Application Understanding']}}
+      </p>
+      <p
+        style="position: absolute; top: 713px; left: 65px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold leading-normal"
+      >
+        Prompt Engineering<br />Capability
+      </p>
+      <p
+        style="position: absolute; top: 723px; left: 299px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        30%
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 690px;
+          left: 396px;
+          width: 280px;
+          white-space: normal;
+          text-align: left;
+        "
+        class="font-opensans text-tiny text-black leading-normal"
+      >
+        Menilai kejelasan, struktur, dan kelengkapan prompt yang dirancang
+        untuk digunakan oleh AI.
+      </p>
+      <p
+        style="position: absolute; top: 713px; left: 743px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Score] Prompt Engineering Capability']}}
+      </p>
+      <p
+        style="position: absolute; top: 815px; left: 65px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold leading-normal"
+      >
+        Context &amp;<br />Information<br />Management
+      </p>
+      <p
+        style="position: absolute; top: 835px; left: 299px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        10%
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 800px;
+          left: 396px;
+          width: 280px;
+          white-space: normal;
+          text-align: left;
+        "
+        class="font-opensans text-tiny text-black leading-normal"
+      >
+        Mengukur kemampuan peserta dalam memilih dan menjelaskan informasi
+        pendukung yang relevan agar AI dapat berfungsi secara efektif.
+      </p>
+      <p
+        style="position: absolute; top: 815px; left: 743px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Score] Context & Information Management']}}
+      </p>
+      <p
+        style="position: absolute; top: 939px; left: 65px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold leading-normal"
+      >
+        AI Risk Awareness &amp;<br />Mitigation
+      </p>
+      <p
+        style="position: absolute; top: 949px; left: 299px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        10%
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 919px;
+          left: 396px;
+          width: 280px;
+          white-space: normal;
+          text-align: left;
+        "
+        class="font-opensans text-tiny text-black leading-normal"
+      >
+        Menilai kemampuan peserta dalam mengidentifikasi risiko penggunaan
+        AI dan mengusulkan strategi mitigasi yang sesuai.
+      </p>
+      <p
+        style="position: absolute; top: 939px; left: 743px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Score] AI Risk Awareness & Mitigation']}}
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 1039px;
+          left: 346px;
+          white-space: nowrap;
+        "
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Total
+      </p>
+      <p
+        style="
+          position: absolute;
+          top: 1039px;
+          left: 743px;
+          white-space: nowrap;
+        "
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Final Score] Individual Task']}}
+      </p>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page">
+      <img
+        width="893"
+        height="1263"
+        src="https://res.cloudinary.com/dx3b3otna/image/upload/v1765167386/Copy_of_27_Nov_-_IND_Laporan_Indivdu_Tech_Data_and_AI_TDAI_Academy004_u7ifpw.png"
+        alt="background image"
+        class="page-background"
+      />
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 59px;
+          width: 775px;
+          height: 120px;
+        ">
+      <p
+        class="font-opensans font-bold text-xl text-white">
+        Laporan Individu
+      </p>
+      <p
+        class="font-opensans font-bold text-sm text-white">
+        Tech, Data, and AI (TDAI) Academy 
+      </div>
+      <!-- Spider chart for application knowledge -->
+      <div
+        style="
+          position: absolute;
+          top: 150px;
+          left: 120px;
+          width: 650px;
+          height: 360px;
+        "
+      >
+        <canvas id="applicationSpiderChart"></canvas>
+      </div>
+      <p
+        style="position: absolute; top: 501px; left: 99px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Kompetensi
+      </p>
+      <p
+        style="position: absolute; top: 501px; left: 292px; white-space: nowrap"
+        class="font-opensans text-xs text-white font-bold"
+      >
+        Catatan Penilaian
+      </p>
+      <p
+        style="position: absolute; top: 501px; left: 592px; white-space: nowrap"
+        class="font-opensans text-xs text-white font-bold"
+      >
+        Langkah Selanjutnya
+      </p>
+      <p
+        style="position: absolute; top: 582px; left: 86px; white-space: nowrap"
+        class="font-opensans text-xs text-black font-bold"
+      >
+        Business<br />Problem<br />Definition
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 545px;
+          left: 220px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Penilaian] Business Problem Definition']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 545px;
+          left: 510px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] Business Problem Definition']}}
+        </p>
+      </div>
+      <p
+        style="position: absolute; top: 733px; left: 86px; white-space: nowrap"
+        class="font-opensans text-tiny text-black font-bold"
+      >
+        AI Application<br />Understanding
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 695px;
+          left: 220px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Penilaian] AI Application Understanding']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 695px;
+          left: 510px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] AI Application Understanding']}}
+        </p>
+      </div>
+      <p
+        style="position: absolute; top: 858px; left: 86px; white-space: nowrap"
+        class="font-opensans text-tiny text-black font-bold"
+      >
+        Prompt<br />Engineering<br />Capability
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 830px;
+          left: 220px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Penilaian] Prompt Engineering Capability']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 830px;
+          left: 510px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] Prompt Engineering Capability']}}
+        </p>
+      </div>
+      <p
+        style="position: absolute; top: 986px; left: 86px; white-space: nowrap"
+        class="font-opensans text-tiny text-black font-bold"
+      >
+        Context &amp;<br />Information<br />Management
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 958px;
+          left: 220px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Catatan Penilaian] Context & Information Management']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 958px;
+          left: 510px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] Context & Information Management']}}
+        </p>
+      </div>
+      <p
+        style="position: absolute; top: 1108px; left: 86px; white-space: nowrap"
+        class="font-opensans text-tiny text-black font-bold"
+      >
+        AI Risk<br />Awareness &amp;<br />Mitigation
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 1080px;
+          left: 220px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify;"
+        >
+          {{$json['[Catatan Penilaian] AI Risk Awareness & Mitigation']}}
+        </p>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 1080px;
+          left: 510px;
+          width: 240px;
+          height: 170px;
+        "
+      >
+        <p
+          class="font-opensans text-tiny text-black leading-tight"
+          style="text-align: justify"
+        >
+          {{$json['[Langkah Selanjutnya] AI Risk Awareness & Mitigation']}}
+        </p>
+      </div>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="page">
+      <img
+        width="893"
+        height="1263"
+        src="https://res.cloudinary.com/dx3b3otna/image/upload/v1765167386/Copy_of_27_Nov_-_IND_Laporan_Indivdu_Tech_Data_and_AI_TDAI_Academy005_sgy9rd.png"
+        alt="background image"
+        class="page-background"
+      />
+      <div
+        style="
+          position: absolute;
+          top: 30px;
+          left: 59px;
+          width: 775px;
+          height: 120px;
+        ">
+      <p
+        class="font-opensans font-bold text-xl text-white">
+        Laporan Individu
+      </p>
+      <p
+        class="font-opensans font-bold text-sm text-white">
+        Tech, Data, and AI (TDAI) Academy 
+      </div>
+      <p
+        style="position: absolute; top: 187px; left: 59px; white-space: nowrap"
+        class="font-opensans text-lg text-white font-bold"
+      >
+        Performa Keseluruhan
+      </p>
+      <p
+        style="position: absolute; top: 258px; left: 191px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Komponen
+      </p>
+      <p
+        style="position: absolute; top: 258px; left: 469px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Bobot
+      </p>
+      <p
+        style="position: absolute; top: 258px; left: 693px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Skor
+      </p>
+      <p
+        style="position: absolute; top: 300px; left: 62px; white-space: nowrap"
+        class="font-opensans text-base text-black font-bold"
+      >
+        Self Learning
+      </p>
+      <p
+        style="position: absolute; top: 343px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Pre-Lecture Quiz <span class="font-italic">(Mandatory)</span>
+      </p>
+      <p
+        style="position: absolute; top: 343px; left: 469px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        30%
+      </p>
+      <p
+        style="position: absolute; top: 343px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Pre-Lecture Quiz Mandatory']}}
+      </p>
+      <p
+        style="position: absolute; top: 385px; left: 62px; white-space: nowrap"
+        class="font-opensans text-base text-black font-bold"
+      >
+        In-house Class
+      </p>
+      <p
+        style="position: absolute; top: 430px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Quiz Tech for Everyone
+      </p>
+      <p
+        style="position: absolute; top: 500px; left: 469px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        20%
+      </p>
+      <p
+        style="position: absolute; top: 430px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Quiz Tech for Everyone']}}
+      </p>
+      <p
+        style="position: absolute; top: 472px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Quiz Data Essentials
+      </p>
+      <p
+        style="position: absolute; top: 472px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Quiz Data Essentials']}}
+      </p>
+      <p
+        style="position: absolute; top: 515px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Quiz AI Essentials
+      </p>
+      <p
+        style="position: absolute; top: 515px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Quiz AI Essentials']}}
+      </p>
+      <p
+        style="position: absolute; top: 557px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Quiz AI for Business Cases
+      </p>
+      <p
+        style="position: absolute; top: 557px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Quiz AI for Business Cases']}}
+      </p>
+      <p
+        style="position: absolute; top: 598px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Post-Test
+      </p>
+      <p
+        style="position: absolute; top: 598px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Post-Test']}}
+      </p>
+      <p
+        style="position: absolute; top: 640px; left: 62px; white-space: nowrap"
+        class="font-opensans text-base text-black font-bold"
+      >
+        Assignment
+      </p>
+      <p
+        style="position: absolute; top: 683px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Individual Task Assignment
+      </p>
+      <p
+        style="position: absolute; top: 683px; left: 469px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        50%
+      </p>
+      <p
+        style="position: absolute; top: 683px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Individual Task']}}
+      </p>
+      <p
+        style="position: absolute; top: 725px; left: 62px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Total Nilai Tugas Wajib
+      </p>
+      <p
+        style="position: absolute; top: 725px; left: 693px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Final Score] Mandatory Assignment']}}
+      </p>
+      <p
+        style="position: absolute; top: 768px; left: 62px; white-space: nowrap"
+        class="font-opensans text-base text-black font-bold"
+      >
+        Bonus Quiz
+      </p>
+      <p
+        style="position: absolute; top: 810px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Pre-Lecture Quiz Bonus
+      </p>
+      <p
+        style="position: absolute; top: 810px; left: 430px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        2.5 Poin per Modul
+      </p>
+      <p
+        style="position: absolute; top: 810px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Pre-Lecture Quiz Bonus']}}
+      </p>
+      <p
+        style="position: absolute; top: 862px; left: 62px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        Community Engagement
+      </p>
+      <p
+        style="position: absolute; top: 862px; left: 430px; white-space: nowrap"
+        class="font-opensans text-tiny text-black"
+      >
+        1.5 Point per Activity
+      </p>
+      <p
+        style="position: absolute; top: 862px; left: 693px; white-space: nowrap"
+        class="font-opensans text-xs text-black"
+      >
+        {{$json['[Final Score] Community Engagement']}}
+      </p>
+      <p
+        style="position: absolute; top: 911px; left: 62px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Total Nilai Akhir (Tugas Wajib + Tugas Bonus)
+      </p>
+      <p
+        style="position: absolute; top: 911px; left: 693px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['[Final Score] Total + Bonus'].round()}}
+      </p>
+      <p
+        style="position: absolute; top: 954px; left: 62px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Grade
+      </p>
+      <p
+        style="position: absolute; top: 954px; left: 693px; white-space: nowrap"
+        class="font-opensans text-sm text-black font-bold"
+      >
+        {{$json['Grade']}}
+      </p>
+      <p
+        style="position: absolute; top: 996px; left: 62px; white-space: nowrap"
+        class="font-opensans text-sm text-white font-bold"
+      >
+        Catatan Akhir*
+      </p>
+      <div
+        style="
+          position: absolute;
+          top: 1035px;
+          left: 62px;
+          width: 760px;
+          height: 150px;
+        "
+      >
+        <p
+          class="font-opensans text-sm text-black leading-relaxed"
+          style="text-align: justify"
+        >
+          {{$json['Catatan Akhir']}}
+        </p>
+      </div>
+      <p
+        style="
+          position: absolute;
+          top: 1155px;
+          left: 58px;
+          width: 760px;
+          white-space: nowrap;
+        "
+        class="font-opensans text-micro text-gray"
+      >
+        *Kelulusan peserta TDAI Academy berasal dari kombinasi nilai Tugas Wajib dan tingkat kehadiran selama program.
+      </p>
+      </div>
+
+    <script>
+      // Spider Chart for Foundational Knowledge (Tech/Data/AI pillars)
+      const foundationalSpiderCtx = document
+        .getElementById('foundationalSpiderChart')
+        .getContext('2d');
+
+      const foundationalSpiderData = {
+        labels: [
+          'Tech Quiz',
+          'Data Quiz',
+          'AI Essentials Quiz',
+          'AI Business Case Quiz',
+        ],
+        datasets: [
+          {
+            label: 'Skor Kompetensi',
+              data: [
+              {{$json['[Score] Tech Quiz'] === '-' ? 0 : Number($json['[Score] Tech Quiz'])}},
+              {{$json['[Score] Data Quiz'] === '-' ? 0 : Number($json['[Score] Data Quiz'])}},
+              {{$json['[Score] AI Essential'] === '-' ? 0 : Number($json['[Score] AI Essential'])}},
+              {{$json['[Score] AI Business Case'] === '-' ? 0 : Number($json['[Score] AI Business Case'])}},
+            ],
+            fill: true,
+            backgroundColor: 'rgba(33, 41, 88, 0.25)',
+            borderColor: 'rgba(33, 41, 88, 1)',
+            pointBackgroundColor: 'rgba(33, 41, 88, 1)',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2,
+            pointRadius: 5,
+            borderWidth: 2,
+          },
+        ],
+      };
+
+      const foundationalSpiderConfig = {
+        type: 'radar',
+        data: foundationalSpiderData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          devicePixelRatio: 2,
+          animation: { duration: 0 },
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true },
+          },
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              angleLines: { display: true, color: '#d1d5db', lineWidth: 1 },
+              grid: { color: '#d1d5db', lineWidth: 1 },
+              pointLabels: {
+                font: {
+                  size: 13,
+                  weight: '600',
+                  family: "'Red Hat Display', sans-serif",
+                },
+                color: '#212958',
+                padding: 18,
+                callback: function (label) {
+                  const words = label.split(' ');
+                  if (words.length > 2) {
+                    const mid = Math.ceil(words.length / 2);
+                    return [
+                      words.slice(0, mid).join(' '),
+                      words.slice(mid).join(' '),
+                    ];
+                  }
+                  return label;
+                },
+              },
+              ticks: {
+                display: true,
+                stepSize: 20,
+                color: '#6b7280',
+                font: { size: 11, family: "'Red Hat Display', sans-serif" },
+                backdropColor: 'transparent',
+                showLabelBackdrop: false,
+              },
+              beginAtZero: true,
+            },
+          },
+          elements: {
+            line: { borderWidth: 3, tension: 0 },
+            point: { radius: 6, hoverRadius: 8, borderWidth: 2 },
+          },
+          layout: { padding: { top: 20, right: 20, bottom: 20, left: 20 } },
+        },
+      };
+
+      new Chart(foundationalSpiderCtx, foundationalSpiderConfig);
+
+      // Spider Chart for Application Knowledge
+      const applicationSpiderCtx = document
+        .getElementById('applicationSpiderChart')
+        .getContext('2d');
+
+      const applicationSpiderData = {
+        labels: [
+          'Business Problem Definition',
+          'AI Application Understanding',
+          'Prompt Engineering Capability',
+          'Context & Information Management',
+          'AI Risk Awareness & Mitigation',
+        ],
+        datasets: [
+          {
+            label: 'Skor Kompetensi',
+            data: [
+              {{$json['[Score] Business Problem Definition'] === '-' ? 0 : Number($json['[Score] Business Problem Definition'])}},
+              {{$json['[Score] AI Application Understanding'] === '-' ? 0 : Number($json['[Score] AI Application Understanding'])}},
+              {{$json['[Score] Prompt Engineering Capability'] === '-' ? 0 : Number($json['[Score] Prompt Engineering Capability'])}},
+              {{$json['[Score] Context & Information Management'] === '-' ? 0 : Number($json['[Score] Context & Information Management'])}},
+              {{$json['[Score] AI Risk Awareness & Mitigation'] === '-' ? 0 : Number($json['[Score] AI Risk Awareness & Mitigation'])}},
+            ],
+            fill: true,
+            backgroundColor: 'rgba(33, 41, 88, 0.25)',
+            borderColor: 'rgba(33, 41, 88, 1)',
+            pointBackgroundColor: 'rgba(33, 41, 88, 1)',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2,
+            pointRadius: 6,
+            borderWidth: 3,
+          },
+        ],
+      };
+
+      const applicationSpiderConfig = {
+        type: 'radar',
+        data: applicationSpiderData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          devicePixelRatio: 2,
+          animation: { duration: 0 },
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true },
+          },
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              angleLines: { display: true, color: '#d1d5db', lineWidth: 1 },
+              grid: { color: '#d1d5db', lineWidth: 1 },
+              pointLabels: {
+                font: {
+                  size: 12,
+                  weight: '600',
+                  family: "'Red Hat Display', sans-serif",
+                },
+                color: '#212958',
+                padding: 15,
+                callback: function (label) {
+                  const words = label.split(' ');
+                  if (words.length > 3) {
+                    const mid = Math.ceil(words.length / 2);
+                    return [
+                      words.slice(0, mid).join(' '),
+                      words.slice(mid).join(' '),
+                    ];
+                  }
+                  return label;
+                },
+              },
+              ticks: {
+                display: true,
+                stepSize: 20,
+                color: '#6b7280',
+                font: { size: 11, family: "'Red Hat Display', sans-serif" },
+                backdropColor: 'transparent',
+                showLabelBackdrop: false,
+              },
+              beginAtZero: true,
+            },
+          },
+          elements: {
+            line: { borderWidth: 3, tension: 0 },
+            point: { radius: 6, hoverRadius: 8, borderWidth: 2 },
+          },
+          layout: { padding: { top: 20, right: 20, bottom: 20, left: 20 } },
+        },
+      };
+
+      new Chart(applicationSpiderCtx, applicationSpiderConfig);
+    </script>
+  </body>
+</html>
