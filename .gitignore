@@ -1,0 +1,17 @@
+# Build outputs
+dist/
+bin/
+obj/
+
+# IDE/Editor
+.vs/
+.vscode/
+*.user
+*.suo
+*.csproj.user
+
+# OS artifacts
+Thumbs.db
+ehthumbs.db
+.DS_Store
+Desktop.ini

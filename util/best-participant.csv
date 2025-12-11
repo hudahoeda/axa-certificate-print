@@ -1,6 +1,6 @@
 ﻿# html_path,pdf_output,Nama,Departemen,Batch
-B2B/axa-certificate/best-participant/TDAI - Best Certificate-1.html,output/axa/best-participant.pdf,ACHMAD AFFANDI,OPS,Batch 1
-B2B/axa-certificate/best-participant/TDAI - Best Certificate-1.html,output/axa/best-participant.pdf,VALENTYA MARLIEN,HC,Batch 1
-B2B/axa-certificate/best-participant/TDAI - Best Certificate-1.html,output/axa/best-participant.pdf,TATAR MARDIKA,OPS,Batch 11
-B2B/axa-certificate/best-participant/TDAI - Best Certificate-1.html,output/axa/best-participant.pdf,YANDIKA ADHA IBRAHIM,HC,Batch 2
-B2B/axa-certificate/best-participant/TDAI - Best Certificate-1.html,output/axa/best-participant.pdf,ENUNG HARYATI,HC,Batch 3
+.\html\best-participant\ACHMAD-AFFANDI.html,.\output\pdf\best-participant\ACHMAD-AFFANDI.pdf,ACHMAD AFFANDI,OPS,Batch 1
+.\html\best-participant\VALENTYA-MARLIEN.html,.\output\pdf\best-participant\VALENTYA-MARLIEN.pdf,VALENTYA MARLIEN,HC,Batch 1
+.\html\best-participant\TATAR-MARDIKA.html,.\output\pdf\best-participant\TATAR-MARDIKA.pdf,TATAR MARDIKA,OPS,Batch 11
+.\html\best-participant\YANDIKA-ADHA-IBRAHIM.html,.\output\pdf\best-participant\YANDIKA-ADHA-IBRAHIM.pdf,YANDIKA ADHA IBRAHIM,HC,Batch 2
+.\html\best-participant\ENUNG-HARYATI.html,.\output\pdf\best-participant\ENUNG-HARYATI.pdf,ENUNG HARYATI,HC,Batch 3
