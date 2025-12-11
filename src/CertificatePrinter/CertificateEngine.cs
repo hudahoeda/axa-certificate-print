@@ -33,6 +33,8 @@ internal static class CertificateEngine
             manifestEntries.AddRange(RenderParticipant(participantRows, options.OutputDirectoryOverride, logger));
         }
 
+        manifestEntries = EnsureUniquePdfPaths(manifestEntries);
+
         WriteManifest(manifestEntries, options.ManifestPath);
         logger.Report($"Manifest written to {Path.GetFullPath(options.ManifestPath)}");
 
@@ -344,11 +346,13 @@ internal static class CertificateEngine
 
     private static void PrintCertificates(string browserPath, IEnumerable<ManifestEntry> manifest, string pageRange, IProgress<string> logger)
     {
-        foreach (var entry in manifest)
+        var list = manifest.ToList();
+        for (var i = 0; i < list.Count; i++)
         {
+            var entry = list[i];
             if (!File.Exists(entry.HtmlPath))
             {
-                logger.Report($"HTML not found, skipping: {entry.HtmlPath}");
+                logger.Report($"[{i + 1}/{list.Count}] HTML not found, skipping: {entry.HtmlPath}");
                 continue;
             }
 
@@ -375,7 +379,7 @@ internal static class CertificateEngine
 
             psi.ArgumentList.Add(fileUri);
 
-            logger.Report($"Printing {entry.HtmlPath} -> {entry.PdfPath}");
+            logger.Report($"[{i + 1}/{list.Count}] Printing {entry.HtmlPath} -> {entry.PdfPath}");
             using var process = Process.Start(psi);
             if (process == null)
             {
@@ -389,9 +393,39 @@ internal static class CertificateEngine
 
             if (process.ExitCode != 0)
             {
-                logger.Report($"Browser exited with code {process.ExitCode}. Output:\n{output}\n{error}");
+                throw new InvalidOperationException($"Browser exited with code {process.ExitCode} for {entry.HtmlPath}. Output:\n{output}\n{error}");
             }
         }
+    }
+
+    private static List<ManifestEntry> EnsureUniquePdfPaths(IEnumerable<ManifestEntry> entries)
+    {
+        var result = new List<ManifestEntry>();
+        var counts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var entry in entries)
+        {
+            var pdfPath = entry.PdfPath;
+            if (counts.TryGetValue(pdfPath, out var count))
+            {
+                count += 1;
+                counts[pdfPath] = count;
+
+                var dir = Path.GetDirectoryName(pdfPath) ?? "";
+                var fileNameWithoutExt = Path.GetFileNameWithoutExtension(pdfPath);
+                var ext = Path.GetExtension(pdfPath);
+                var newFileName = $"{fileNameWithoutExt}-{count}{ext}";
+                var newPath = Path.GetFullPath(Path.Combine(dir, newFileName));
+                result.Add(entry with { PdfPath = newPath });
+            }
+            else
+            {
+                counts[pdfPath] = 0;
+                result.Add(entry);
+            }
+        }
+
+        return result;
     }
 
     private static string? GetField(IReadOnlyDictionary<string, string> row, params string[] keys)
