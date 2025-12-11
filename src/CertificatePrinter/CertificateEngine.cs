@@ -347,6 +347,11 @@ internal static class CertificateEngine
     private static void PrintCertificates(string browserPath, IEnumerable<ManifestEntry> manifest, string pageRange, IProgress<string> logger)
     {
         var list = manifest.ToList();
+
+        // Reuse a single browser profile so cached assets (e.g., Google Fonts) are fetched once
+        var sharedUserDataDir = Path.Combine(Path.GetTempPath(), "certificate-printer", "browser-cache");
+        Directory.CreateDirectory(sharedUserDataDir);
+        logger.Report($"Using browser cache directory: {sharedUserDataDir}");
         for (var i = 0; i < list.Count; i++)
         {
             var entry = list[i];
@@ -370,7 +375,10 @@ internal static class CertificateEngine
             psi.ArgumentList.Add("--headless");
             psi.ArgumentList.Add("--disable-gpu");
             psi.ArgumentList.Add("--no-sandbox");
+            psi.ArgumentList.Add($"--user-data-dir={sharedUserDataDir}");
             psi.ArgumentList.Add($"--print-to-pdf={entry.PdfPath}");
+            psi.ArgumentList.Add("--no-first-run");
+            psi.ArgumentList.Add("--no-default-browser-check");
 
             if (!string.IsNullOrWhiteSpace(pageRange))
             {
@@ -391,9 +399,16 @@ internal static class CertificateEngine
             var error = process.StandardError.ReadToEnd();
             process.WaitForExit();
 
+            var pdfExists = File.Exists(entry.PdfPath);
+
             if (process.ExitCode != 0)
             {
                 throw new InvalidOperationException($"Browser exited with code {process.ExitCode} for {entry.HtmlPath}. Output:\n{output}\n{error}");
+            }
+
+            if (!pdfExists)
+            {
+                throw new InvalidOperationException($"Browser reported success but PDF was not created: {entry.PdfPath}\nOutput:\n{output}\n{error}");
             }
         }
     }
