@@ -175,10 +175,21 @@ internal static class CertificateEngine
             var destHtml = Path.Combine(templateDir, $"{baseName}.html");
             var batchValue = batch ?? string.Empty;
 
+            // If a batch is present, append it to the visual "Placeholder Batch" label in the template.
+            // If no batch is provided, leave the template label unchanged.
+            var batchReplacement = string.IsNullOrWhiteSpace(batchValue)
+                ? "Placeholder Batch"
+                : $"Placeholder Batch {batchValue}";
+
             RenderTemplate(resolvedTemplate, destHtml, new Dictionary<string, string>
             {
+                // Support multiple common placeholder variants so templates with or without braces work.
+                ["Placeholder for Student Name"] = name,
                 ["{{Placeholder for Student Name}}"] = name,
-                ["{{BATCH Placeholder}}"] = batchValue
+                ["Placeholder Name"] = name,
+
+                ["{{BATCH Placeholder}}"] = batchReplacement,
+                ["Placeholder Batch"] = batchReplacement
             });
 
             var pdfPath = BuildPdfPath(row, baseName, outputOverride);
